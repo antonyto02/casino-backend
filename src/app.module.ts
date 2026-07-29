@@ -16,7 +16,7 @@ import { PermissionEvent } from './events/permission-event.entity';
   imports: [
     ThrottlerModule.forRoot([{ ttl: 60_000, limit: 60 }]),
     TypeOrmModule.forRoot({
-      type: 'sqlite',
+      type: 'better-sqlite3',
       database: process.env.DATABASE_PATH ?? 'casino.sqlite',
       entities: [User, ConsentRecord, PermissionEvent],
       synchronize: true,
